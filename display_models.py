@@ -86,7 +86,7 @@ class DisplayInverse():
         t = np.arange(0,s_matrix.shape[0]*self.model.dt,self.model.dt)
         np.random.seed(42)
 
-        _,ax = plt.subplots(figsize = (24,12))
+        _,ax = plt.subplots(1,figsize = (24,12))
         ax.set_title('Shot Gather', fontsize=32)
         ax.set_yticks(np.arange(0,np.max(self.x_t[:,1:])+0.005,(np.max(self.x_t[:,1:])+0.005)/10))
         ax.set_yticklabels(np.int32(np.arange(0,np.max(self.x_t[:,1:])+0.005,(np.max(self.x_t[:,1:])+0.005)/10)*1000),fontsize=20)                   
