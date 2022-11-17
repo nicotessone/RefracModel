@@ -62,7 +62,7 @@ class shot_refrac(refrac_models):
         t = np.arange(0,s_matrix.shape[0]*self.dt,self.dt)
         np.random.seed(42)
 
-        _,ax = plt.subplots(figsize = (24,12))
+        _,ax = plt.subplots(1,figsize = (20,10))
         ax.set_title('Shot Gather', fontsize=32)
         ax.set_ylabel('Time [ms]', fontsize=23)
         ax.set_xlabel('Offset \n[m]', fontsize=23)
@@ -85,7 +85,7 @@ class shot_refrac(refrac_models):
         if self.picks: 
             ax.plot(x_t[:,0]*self.dv-self.dx*self.dv,np.min(x_t[:,:],axis=1),'.',color='r',markersize=15)
             plt.show()
-            _,ax1 = plt.subplots(figsize = (28,14))
+            _,ax1 = plt.subplots(1,figsize = (20,10))
             ax1.set_title('Tiempos de Arribo', fontsize=28)
             ax1.set_ylabel('Time [ms]',fontsize=23)
             ax1.set_xlabel('Offset \n[m]',fontsize=23)

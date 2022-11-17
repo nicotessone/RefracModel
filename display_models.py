@@ -86,7 +86,7 @@ class DisplayInverse():
         t = np.arange(0,s_matrix.shape[0]*self.model.dt,self.model.dt)
         np.random.seed(42)
 
-        _,ax = plt.subplots(1,figsize = (24,12))
+        _,ax = plt.subplots(1,figsize = (20,10))
         ax.set_title('Shot Gather', fontsize=32)
         ax.set_yticks(np.arange(0,np.max(self.x_t[:,1:])+0.005,(np.max(self.x_t[:,1:])+0.005)/10))
         ax.set_yticklabels(np.int32(np.arange(0,np.max(self.x_t[:,1:])+0.005,(np.max(self.x_t[:,1:])+0.005)/10)*1000),fontsize=20)                   
@@ -114,7 +114,7 @@ class DisplayInverse():
         l_Dx3 = widgets.Label('Refractor 2',layout=widgets.Layout(display="flex", justify_content="center"))
         Dx3 = widgets.IntRangeSlider( value=[25, 47], min=0, max=self.model.ng, step=1,layout=widgets.Layout(display="flex", justify_content="center"))        
         def interac_1(Dx1,Dx2,Dx3):  
-            _,ax1 = plt.subplots(figsize = (24,12))
+            _,ax1 = plt.subplots(1,figsize = (20,10))
             ax1.set_title('Tiempos de Arribo', fontsize=28)
             ax1.set_yticks(np.arange(0,np.max(self.x_t[:,1:])+0.005,(np.max(self.x_t[:,1:])+0.005)/10))
             ax1.set_yticklabels(np.int32(np.arange(0,np.max(self.x_t[:,1:])+0.005,(np.max(self.x_t[:,1:])+0.005)/10)*1000),fontsize=20)
@@ -132,7 +132,7 @@ class DisplayInverse():
             return plt.show()
         def interac_2(Dx1,Dx2,Dx3):
             inverse = self.model.inverse_model(self.x_t, x1=Dx1[0], xo1=Dx1[1], x2=Dx2[0], xo2=Dx2[1], x3=Dx3[0], xo3=Dx3[1])
-            _,ax2 = plt.subplots(figsize = (24,12))
+            _,ax2 = plt.subplots(1,figsize = (20,10))
             ax2.invert_yaxis()
             ax2.set_title('Modelo', fontsize=28)
             ax2.set_yticks(np.arange(0,int(inverse[3]+inverse[4]+10),2))
